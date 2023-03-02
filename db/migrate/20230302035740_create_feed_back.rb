@@ -3,6 +3,7 @@ class CreateFeedBack < ActiveRecord::Migration[6.1]
     create_table :feedbacks do |t|
       t.text :comment
       t.references :user, foreign_key: true
+      t.references :raw_material, foreign_key: true
       t.timestamps
     end
   end

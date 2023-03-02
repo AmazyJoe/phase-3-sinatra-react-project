@@ -15,8 +15,10 @@ ActiveRecord::Schema.define(version: 2023_03_02_035801) do
   create_table "feedbacks", force: :cascade do |t|
     t.text "comment"
     t.integer "user_id"
+    t.integer "raw_material_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["raw_material_id"], name: "index_feedbacks_on_raw_material_id"
     t.index ["user_id"], name: "index_feedbacks_on_user_id"
   end
 
@@ -42,6 +44,7 @@ ActiveRecord::Schema.define(version: 2023_03_02_035801) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "feedbacks", "raw_materials"
   add_foreign_key "feedbacks", "users"
   add_foreign_key "raw_materials", "users"
 end
