@@ -14,3 +14,6 @@ This is created using ruby's sinatra and active records. This is literally our A
 Our back-end has 3 models,and the way these models relate is described in the table below.
 https://dbdiagram.io/d/63fd860e296d97641d843231.
 We then do migrations using rake ~ db:migrate~ and later on use ~rake db:seed~ to populate our database using the faker gem.
+
+The server on the backend runs on port 9292 of the local host, we then link this to the front-end components as we specify the exact routes we want to fetch from. 
+
