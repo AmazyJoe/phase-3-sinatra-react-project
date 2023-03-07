@@ -9,3 +9,4 @@ That is all about our front-end.
 This is created using ruby's sinatra and active records. This is literally our API from which we do a fetch/axios request and attach the server link running in the back end to the front-end for fetching purposes to the user.
 Our back-end has 3 models,and the way these models relate is described in the table below.
 https://dbdiagram.io/d/63fd860e296d97641d843231.
+We then do migrations using rake ~ db:migrate~ and later on use ~rake db:seed~ to populate our database using the faker gem.
