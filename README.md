@@ -6,6 +6,10 @@ The link to the front-end repository is ~ https://github.com/AmazyJoe/code-chall
 That is all about our front-end.
 
 # Back-end
+The project is set up on ruby version 2.7.1p83 (2020-03-31 revision a0c7c23c9c) [x86_64-linux].
+To use this project you can clone it by retrieving the ssh key from the code section of the repository.
+To run the development server, use ~rake server~
+
 This is created using ruby's sinatra and active records. This is literally our API from which we do a fetch/axios request and attach the server link running in the back end to the front-end for fetching purposes to the user.
 Our back-end has 3 models,and the way these models relate is described in the table below.
 https://dbdiagram.io/d/63fd860e296d97641d843231.
