@@ -13,17 +13,21 @@ require 'faker'
 end
 
 # Create 50 grass raw materials, each belonging to a random user in Kenya
+require 'open-uri'
+
 50.times do
+  image_url = URI.open("https://source.unsplash.com/400x400/?grass")
   RawMaterial.create!(
     name: 'grass',
-    image_url: Faker::LoremPixel.image(size: "400x400", is_gray: false, category: 'food'),
-    user: User.where(location: 'Kenya').order("RANDOM()").first,
+    image_url: image_url,
+    user: User.order("RANDOM()").first,
     temperature: "#{Faker::Number.between(from: 20, to: 40)}°C",
-    description: "This is a type of grass that grows in Kenya.",
+    description: "This is a type of grass that grows in various regions.",
     maturity_period: "#{Faker::Number.between(from: 1, to: 12)} months",
     environmental_conditions: "Requires plenty of rainfall and sunshine."
   )
 end
+
 
 # Create 100 feedbacks, each belonging to a random user and raw material
 100.times do
